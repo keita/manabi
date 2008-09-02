@@ -1,0 +1,5 @@
+# original: http://www.kanzaki.com/docs/sw/n3.html
+# modified "42" to 42
+
+@prefix math: <http://www.w3.org/1998/Math/MathML> .
+{ :Temperature math:gt 42 . } => { :Controler :stop :Bolier . } .

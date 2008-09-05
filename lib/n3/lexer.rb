@@ -81,6 +81,12 @@ module N3
         return [:QNAME, m]
       end
 
+      # quickvariable: ex. ?x, ?y
+      if m = @s.scan(/\?([a-z]+)/)
+        @pos += m.size
+        return [:QUICK_VARIABLE, @s[1]]
+      end
+
       # string: ex. "abc", """abc"""
       if (m = @s.scan(/"""((\\"|[^"])*)"""/)) or
           (m = @s.scan(/"((\\"|[^"])*)"/))
